@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edwin Chronicals Diary</title>
+    <title>My Diary</title>
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/diary.css">
 </head>
 <body>
-    
+  <header>
+    <h1>My Diary</h1>
+    <button id="logout-btn">Logout</button>
+  </header>
+  <main>
+    <section id="entry-list"></section>
+    <section id="entry-detail" style="display:none;">
+      <h2 id="entry-title"></h2>
+      <p id="entry-content"></p>
+      <button id="edit-btn">Edit</button>
+      <button id="delete-btn">Delete</button>
+      <button id="back-btn">Back</button>
+    </section>
+    <section id="entry-form-section" style="display:none;">
+      <form id="entry-form">
+        <input type="text" id="form-title" placeholder="Title" required>
+        <textarea id="form-content" placeholder="Write your entry..." required></textarea>
+        <button type="submit" id="save-btn">Save</button>
+        <button type="button" id="cancel-btn">Cancel</button>
+      </form>
+    </section>
+    <button id="new-entry-btn">New Entry</button>
+    <div id="diary-error" class="error"></div>
+  </main>
+  <script src="../services/api.js"></script>
+  <script src="../services/diary.js"></script>
 </body>
 </html>
