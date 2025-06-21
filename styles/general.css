@@ -1,37 +1,42 @@
-h1,p,button{
+h1, p, button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgba(80, 65, 23, 0.692);
+    color: #23404a;
 }
-p{
-    color:rgb(224, 131, 24);
+
+p {
+    color: #15607a;
 }
-.title-color{
-    color: rgb(21, 95, 124);
+
+.title-color {
+    color: #15607a;
     text-align: end;
     font: caption;
     padding: 0.6rem;
-
 }
 
-/* button section */
 /* Secondary Button (Outline) */
 .secondary-btn {
-    background-color: transparent cyan;
-    color: #6c757d; /* Gray text */
-    border: 1px solid #6c757d; /* Gray border */
+    background-color: transparent;
+    color: #15607a;
+    border: 2px solid #15607a;
+    border-radius: 0.5em;
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
 }
 
 .secondary-btn:hover,
 .secondary-btn:focus {
-    background-color: #042847; /* Fill with color on hover/focus */
-    color: #ffffff; /* White text on hover/focus */
+    background-color: #15607a;
+    color: #fff;
     transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(21, 96, 122, 0.15);
 }
 
 .secondary-btn:active {
     background-color: #63afe9;
-    color: #ffffff;
+    color: #fff;
     transform: translateY(0);
     box-shadow: none;
 }

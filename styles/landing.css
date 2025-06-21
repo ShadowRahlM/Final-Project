@@ -1,13 +1,21 @@
-/* Header styles */
-header {
-  width: 100%;
-  height: 12.5rem;
-  background-image: linear-gradient(
+/* Page-wide background gradient for consistency */
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
     to left,
     rgb(73, 72, 72) 20%,
     green 50%,
     teal 100%
   );
+}
+
+/* Header styles */
+header {
+  width: 100%;
+  height: 12.5rem;
+  background: transparent; /* Remove header-specific gradient for consistency */
   margin: 0;
 }
 
@@ -33,6 +41,7 @@ button {
   padding: 0.9rem;
 }
 .army-gradient-repeating-camo {
+  /* This class is now redundant, but kept for legacy use */
   background-image: linear-gradient(to right, #7e9eb4, #d89925);
 }
 
@@ -61,13 +70,11 @@ button {
 }
 
 .lifted-effect {
-  /* The key is the vertical offset and blur of the shadow */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* x-offset y-offset blur-radius color */
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Optional: Add a hover effect to emphasize the lift */
 .lifted-effect:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Slightly larger shadow */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px); /* Lift it slightly upwards */
 }
