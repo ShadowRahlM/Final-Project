@@ -1,0 +1,98 @@
+/* 
+  Consistent background gradient for the signup page.
+  Matches the rest of the app for a unified look.
+*/
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    to left,
+    rgb(73, 72, 72) 20%,
+    green 50%,
+    teal 100%
+  );
+}
+
+/* 
+  Home icon for navigation back to landing page.
+*/
+.home-icon {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-size: 2rem;
+  color: #0084ff;
+  text-decoration: none;
+  transition: color 0.2s;
+  z-index: 10;
+}
+.home-icon:hover {
+  color: #005fa3;
+}
+
+/* 
+  Container for the signup form.
+  Centers the form and adds padding, background, and shadow.
+*/
+.login-container {
+  max-width: 350px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 0.8em;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* 
+  Input fields for email and password.
+  Styled for clarity and accessibility.
+*/
+input[type="email"], input[type="password"] {
+  width: 90%;
+  padding: 0.7em;
+  margin: 0.7em 0;
+  border: 1px solid #48a1dd;
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+/* 
+  Signup button styling.
+  Matches the app's accent color.
+*/
+button {
+  background: #0084ff;
+  color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.7em 1.5em;
+  margin-top: 1em;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #005fa3;
+}
+
+/* 
+  Error message styling.
+  Red color for visibility.
+*/
+.error {
+  color: #d32f2f;
+  margin-top: 1em;
+}
+
+/* 
+  Link to login page.
+  Subtle color and underline on hover.
+*/
+a {
+  color: #0084ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration:

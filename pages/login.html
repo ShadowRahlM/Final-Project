@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Login | Edwin's Chronicals</title>
+  <!-- Use the same gradient and style as other pages -->
   <link rel="stylesheet" href="../styles/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+  <!-- Home icon for navigation back to landing page -->
   <a href="../index.html" class="home-icon" title="Return Home">
     <i class="fa fa-home"></i>
   </a>
@@ -18,7 +20,10 @@
       <button type="submit">Login</button>
       <div id="login-error" class="error"></div>
     </form>
+    <!-- Signup link for users who don't have an account -->
+    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
   </div>
+  <!-- JS for API and login logic -->
   <script src="../services/api.js"></script>
   <script src="../services/login.js"></script>
 </body>

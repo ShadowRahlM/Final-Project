@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | Edwin's Chronicals</title>
+  <link rel="stylesheet" href="../styles/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- Home icon for navigation -->
+  <a href="../index.html" class="home-icon" title="Return Home">
+    <i class="fa fa-home"></i>
+  </a>
+  <div class="login-container">
+    <h2><i class="fa-solid fa-user-plus"></i> Sign Up for Edwin's Chronicals</h2>
+    <form id="signup-form">
+      <input type="email" id="signup-email" placeholder="Email" required>
+      <input type="password" id="signup-password" placeholder="Password" required>
+      <input type="password" id="signup-confirm" placeholder="Confirm Password" required>
+      <button type="submit">Sign Up</button>
+      <div id="signup-error" class="error"></div>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+  <script src="../services/api.js"></script>
+  <script src="../services/signup.js"></script>
+</body>
+</html>
