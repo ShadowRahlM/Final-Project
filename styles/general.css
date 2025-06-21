@@ -1,0 +1,37 @@
+h1,p,button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(80, 65, 23, 0.692);
+}
+p{
+    color:rgb(224, 131, 24);
+}
+.title-color{
+    color: rgb(21, 95, 124);
+    text-align: end;
+    font: caption;
+    padding: 0.6rem;
+
+}
+
+/* button section */
+/* Secondary Button (Outline) */
+.secondary-btn {
+    background-color: transparent cyan;
+    color: #6c757d; /* Gray text */
+    border: 1px solid #6c757d; /* Gray border */
+}
+
+.secondary-btn:hover,
+.secondary-btn:focus {
+    background-color: #042847; /* Fill with color on hover/focus */
+    color: #ffffff; /* White text on hover/focus */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-btn:active {
+    background-color: #63afe9;
+    color: #ffffff;
+    transform: translateY(0);
+    box-shadow: none;
+}
