@@ -32,3 +32,16 @@ button {
   color: #d32f2f;
   margin-top: 1em;
 }
+.home-icon {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-size: 2rem;
+  color: #0084ff;
+  text-decoration: none;
+  transition: color 0.2s;
+  z-index: 10;
+}
+.home-icon:hover {
+  color: #005fa3;
+}
