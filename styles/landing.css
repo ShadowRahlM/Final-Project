@@ -33,11 +33,7 @@ button {
   padding: 0.9rem;
 }
 .army-gradient-repeating-camo {
-  background-image: linear-gradient(
-    to right,
-    #7e9eb4,
-    /* Charcoal */ #d89925 /* DarkGray */
-  );
+  background-image: linear-gradient(to right, #7e9eb4, #d89925);
 }
 
 .flex-container {
