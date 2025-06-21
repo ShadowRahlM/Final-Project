@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Diary</title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/diary.css">
+  <meta charset="UTF-8">
+  <title>My Chronicals | Edwin's Chronicals</title>
+  <link rel="stylesheet" href="../styles/diary.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
   <header>
-    <h1>My Diary</h1>
-    <button id="logout-btn">Logout</button>
+    <h1><i class="fa-solid fa-book"></i> Edwin's Chronicals</h1>
+    <button id="logout-btn"><i class="fa fa-sign-out-alt"></i> Logout</button>
   </header>
   <main>
     <section id="entry-list"></section>
     <section id="entry-detail" style="display:none;">
       <h2 id="entry-title"></h2>
       <p id="entry-content"></p>
-      <button id="edit-btn">Edit</button>
-      <button id="delete-btn">Delete</button>
-      <button id="back-btn">Back</button>
+      <button id="edit-btn"><i class="fa fa-edit"></i> Edit</button>
+      <button id="delete-btn"><i class="fa fa-trash"></i> Delete</button>
+      <button id="back-btn"><i class="fa fa-arrow-left"></i> Back</button>
     </section>
     <section id="entry-form-section" style="display:none;">
       <form id="entry-form">
         <input type="text" id="form-title" placeholder="Title" required>
         <textarea id="form-content" placeholder="Write your entry..." required></textarea>
-        <button type="submit" id="save-btn">Save</button>
-        <button type="button" id="cancel-btn">Cancel</button>
+        <button type="submit" id="save-btn"><i class="fa fa-save"></i> Save</button>
+        <button type="button" id="cancel-btn"><i class="fa fa-times"></i> Cancel</button>
       </form>
     </section>
-    <button id="new-entry-btn">New Entry</button>
+    <button id="new-entry-btn"><i class="fa fa-plus"></i> New Entry</button>
     <div id="diary-error" class="error"></div>
   </main>
   <script src="../services/api.js"></script>
