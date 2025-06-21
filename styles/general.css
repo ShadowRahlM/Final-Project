@@ -1,12 +1,26 @@
+/* 
+  Set a consistent font and base color for all main text elements.
+  This ensures a unified look across headings, paragraphs, and buttons.
+*/
 h1, p, button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #23404a;
 }
 
+/* 
+  Paragraphs get a distinct color for readability and visual hierarchy.
+*/
 p {
     color: #15607a;
 }
 
+/* 
+  Utility class for coloring and styling feature titles.
+  - Sets a unique color
+  - Aligns text to the end
+  - Uses system caption font for a subtle effect
+  - Adds padding for spacing
+*/
 .title-color {
     color: #15607a;
     text-align: end;
@@ -14,7 +28,13 @@ p {
     padding: 0.6rem;
 }
 
-/* Secondary Button (Outline) */
+/* 
+  Styles for secondary (outline) buttons:
+  - Transparent background by default
+  - Colored border and text
+  - Rounded corners and padding for a modern look
+  - Smooth transitions for hover/focus/active states
+*/
 .secondary-btn {
     background-color: transparent;
     color: #15607a;
@@ -26,6 +46,12 @@ p {
     cursor: pointer;
 }
 
+/* 
+  On hover or focus:
+  - Button background fills with accent color
+  - Text turns white
+  - Slight upward movement and shadow for feedback
+*/
 .secondary-btn:hover,
 .secondary-btn:focus {
     background-color: #15607a;
@@ -34,6 +60,12 @@ p {
     box-shadow: 0 2px 8px rgba(21, 96, 122, 0.15);
 }
 
+/* 
+  On active (pressed) state:
+  - Lighter blue background
+  - No shadow
+  - Button returns to original position
+*/
 .secondary-btn:active {
     background-color: #63afe9;
     color: #fff;

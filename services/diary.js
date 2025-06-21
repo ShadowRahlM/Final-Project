@@ -1,17 +1,18 @@
+// Get the user's token from localStorage. Redirect to login if not found.
 const token = localStorage.getItem("token");
 if (!token) window.location.href = "login.html";
 
+// Cache DOM elements for later use
 const entryList = document.getElementById("entry-list");
 const entryDetail = document.getElementById("entry-detail");
 const entryFormSection = document.getElementById("entry-form-section");
 const diaryError = document.getElementById("diary-error");
-
 const newEntryBtn = document.getElementById("new-entry-btn");
 const logoutBtn = document.getElementById("logout-btn");
 
 let currentEntryId = null;
 
-// Load all entries
+// Load all diary entries and display them as previews
 async function loadEntries() {
   entryList.innerHTML = "<p>Loading...</p>";
   entryDetail.style.display = "none";
@@ -22,6 +23,7 @@ async function loadEntries() {
       entryList.innerHTML = "<p>No entries yet.</p>";
       return;
     }
+    // Render each entry as a clickable preview
     entryList.innerHTML = entries
       .map(
         (e) =>
@@ -31,6 +33,7 @@ async function loadEntries() {
           </div>`
       )
       .join("");
+    // Add click listeners to each preview
     document.querySelectorAll(".entry-preview").forEach((el) =>
       el.addEventListener("click", () => showEntry(el.dataset.id))
     );
@@ -39,7 +42,7 @@ async function loadEntries() {
   }
 }
 
-// Show entry detail
+// Show the details of a single diary entry
 async function showEntry(id) {
   try {
     const entry = await window.api.getEntry(token, id);
@@ -54,7 +57,7 @@ async function showEntry(id) {
   }
 }
 
-// New entry
+// Show the form for creating a new entry
 newEntryBtn.onclick = () => {
   currentEntryId = null;
   document.getElementById("form-title").value = "";
@@ -64,7 +67,7 @@ newEntryBtn.onclick = () => {
   entryList.innerHTML = "";
 };
 
-// Save entry (create or update)
+// Handle form submission for creating or updating an entry
 document.getElementById("entry-form").onsubmit = async (e) => {
   e.preventDefault();
   const title = document.getElementById("form-title").value;
@@ -81,7 +84,7 @@ document.getElementById("entry-form").onsubmit = async (e) => {
   }
 };
 
-// Edit entry
+// Edit the currently viewed entry
 document.getElementById("edit-btn").onclick = async () => {
   const entry = await window.api.getEntry(token, currentEntryId);
   document.getElementById("form-title").value = entry.title;
@@ -91,7 +94,7 @@ document.getElementById("edit-btn").onclick = async () => {
   entryList.innerHTML = "";
 };
 
-// Delete entry
+// Delete the currently viewed entry
 document.getElementById("delete-btn").onclick = async () => {
   if (confirm("Delete this entry?")) {
     try {
@@ -103,17 +106,15 @@ document.getElementById("delete-btn").onclick = async () => {
   }
 };
 
-// Back button
+// Return to the list of entries from detail or form view
 document.getElementById("back-btn").onclick = loadEntries;
-
-// Cancel form
 document.getElementById("cancel-btn").onclick = loadEntries;
 
-// Logout
+// Logout: clear token and redirect to login
 logoutBtn.onclick = () => {
   localStorage.removeItem("token");
   window.location.href = "login.html";
 };
 
-// Initial load
+// Initial load of entries when the page loads
 loadEntries();

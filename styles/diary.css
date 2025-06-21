@@ -118,3 +118,55 @@ textarea {
 #entry-detail.active, #new-entry-form.active {
   display: block;
 }
+
+/* 
+  Consistent gradient background for the diary page.
+*/
+
+/* 
+  Styles the header bar with app name and logout button.
+*/
+
+/* 
+  Main content area for the diary entries.
+*/
+
+/* 
+  List of diary entry previews.
+*/
+
+/* 
+  Individual diary entry preview card.
+*/
+
+/* 
+  Detailed view of a diary entry.
+*/
+
+/* 
+  Entry form section for creating or editing diary entries.
+*/
+
+/* 
+  Button styles for various actions.
+*/
+
+/* 
+  Input and textarea styles for diary entry content.
+*/
+
+/* 
+  Error message styling.
+*/
+
+/* 
+  New entry button styling.
+*/
+
+/* 
+  Hidden by default, this form appears when creating a new entry.
+*/
+
+/* 
+  The detailed view of an entry is hidden by default and shown when an entry is selected.
+*/
