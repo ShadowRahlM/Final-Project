@@ -69,8 +69,8 @@ button {
 */
 .flex-container {
   display: flex;
-  justify-items: space-around;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
   gap: 2em;
 }
 
@@ -88,7 +88,7 @@ button {
 */
 .flex-item {
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   background-color: whitesmoke;
   border: 1px solid #48a1dd;
   border-radius: 0.8em;
@@ -102,7 +102,7 @@ button {
 */
 .lifted-effect {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 .lifted-effect:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);

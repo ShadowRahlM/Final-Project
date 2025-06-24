@@ -1,6 +1,6 @@
 /* 
-  Set a consistent font and base color for all main text elements.
-  This ensures a unified look across headings, paragraphs, and buttons.
+  Use a friendly, modern font and set a base color for all main text elements.
+  This keeps everything looking clean and consistent across the app.
 */
 h1, p, button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -8,18 +8,15 @@ h1, p, button {
 }
 
 /* 
-  Paragraphs get a distinct color for readability and visual hierarchy.
+  Give paragraphs a softer blue color for better readability and a bit of personality.
 */
 p {
     color: #15607a;
 }
 
 /* 
-  Utility class for coloring and styling feature titles.
-  - Sets a unique color
-  - Aligns text to the end
-  - Uses system caption font for a subtle effect
-  - Adds padding for spacing
+  This class is for feature titles—makes them stand out with a unique color,
+  aligns them to the right, and adds a little padding for breathing room.
 */
 .title-color {
     color: #15607a;
@@ -29,11 +26,11 @@ p {
 }
 
 /* 
-  Styles for secondary (outline) buttons:
-  - Transparent background by default
-  - Colored border and text
-  - Rounded corners and padding for a modern look
-  - Smooth transitions for hover/focus/active states
+  The "secondary-btn" class styles our outline buttons.
+  - Transparent background so it blends in until hovered
+  - Blue border and text for a modern look
+  - Rounded corners and padding for comfort
+  - Smooth transitions for a nice interactive feel
 */
 .secondary-btn {
     background-color: transparent;
@@ -47,10 +44,11 @@ p {
 }
 
 /* 
-  On hover or focus:
-  - Button background fills with accent color
-  - Text turns white
-  - Slight upward movement and shadow for feedback
+  When you hover or focus on the button:
+  - The background fills in blue
+  - The text turns white
+  - The button lifts up a bit and gets a subtle shadow
+  - Feels more clickable!
 */
 .secondary-btn:hover,
 .secondary-btn:focus {
@@ -61,10 +59,10 @@ p {
 }
 
 /* 
-  On active (pressed) state:
-  - Lighter blue background
-  - No shadow
-  - Button returns to original position
+  When you actually click the button:
+  - The blue gets lighter
+  - The button drops back down and the shadow disappears
+  - Gives a nice "press" effect
 */
 .secondary-btn:active {
     background-color: #63afe9;

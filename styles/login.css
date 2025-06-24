@@ -1,6 +1,13 @@
 body {
-  background: #f0f4f8;
+  min-height: 100vh;
+  margin: 0;
   font-family: Arial, sans-serif;
+  background: linear-gradient(
+    to left,
+    rgb(73, 72, 72) 20%,
+    green 50%,
+    teal 100%
+  );
 }
 .login-container {
   max-width: 350px;
@@ -17,6 +24,7 @@ input[type="email"], input[type="password"] {
   margin: 0.7em 0;
   border: 1px solid #48a1dd;
   border-radius: 0.5em;
+  font-size: 1em;
 }
 button {
   background: #0084ff;
@@ -27,6 +35,10 @@ button {
   margin-top: 1em;
   cursor: pointer;
   font-size: 1em;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #005fa3;
 }
 .error {
   color: #d32f2f;
@@ -44,4 +56,11 @@ button {
 }
 .home-icon:hover {
   color: #005fa3;
+}
+a {
+  color: #0084ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
