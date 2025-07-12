@@ -1,45 +1,153 @@
-/* Add these new styles */
-.loading-state, .no-entries {
-  text-align: center;
-  padding: 2rem;
-  color: #666;
-}
-
-.loading-state i {
-  margin-right: 0.5rem;
-}
-
-.hidden {
-  display: none !important;
-}
-
-.entry-preview {
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.entry-preview:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.entry-preview h3 {
-  margin: 0 0 0.5rem 0;
-  color: #333;
-}
-
-.entry-preview small {
-  color: #666;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.entry-preview p {
+/* 
+   This gradient background keeps the diary page visually consistent with the rest of the app.
+*/
+body {
+  min-height: 100vh;
   margin: 0;
-  color: #444;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    to left,
+    rgb(73, 72, 72) 20%,
+    green 50%,
+    teal 100%
+  );
+}
+
+/* 
+   The header bar at the top holds the app name and logout button.
+   It's blue to stand out from the rest of the page.
+*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0084ff;
+  color: #fff;
+  padding: 1.5rem 2rem;
+}
+
+/* 
+   The main content area is centered and doesn't get too wide.
+*/
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* 
+   This is the list of diary entry previews.
+   They're laid out in a flexible grid.
+*/
+#entry-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* 
+   Each diary entry preview is a card you can click.
+   It has a white background, rounded corners, and a soft shadow.
+*/
+.entry-preview {
+  background: #fff;
+  border-radius: 0.7em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.2em;
+  width: 250px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.entry-preview:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+
+/* 
+   The detailed view and the entry form both get a card look.
+*/
+#entry-detail, #entry-form-section {
+  background: #fff;
+  border-radius: 0.7em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 2em;
+  margin: 2em 0;
+}
+
+/* 
+   Buttons are styled for clarity and feedback.
+   The delete button is red, and back/cancel are gray.
+*/
+button {
+  background: #0084ff;
+  color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1.2em;
+  margin: 0.5em 0.5em 0.5em 0;
+  cursor: pointer;
+  font-size: 1em;
+}
+button#delete-btn {
+  background: #d32f2f;
+}
+button#back-btn, button#cancel-btn {
+  background: #aaa;
+}
+
+/* 
+   Inputs and textareas are wide, padded, and easy to read.
+*/
+input[type="text"], textarea {
+  width: 100%;
+  padding: 0.7em;
+  margin: 0.7em 0;
+  border: 1px solid #48a1dd;
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* 
+   Error messages are red and stand out.
+*/
+.error {
+  color: #d32f2f;
+  margin-top: 1em;
+}
+
+/* 
+   The new entry button is bold and stands out.
+*/
+#new-entry-btn {
+  background: #0084ff;
+  color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 1em 0;
+}
+#new-entry-btn:hover {
+  background: #005bb5;
+}
+
+/* 
+   Hide the new entry form and entry detail by default.
+   Show them only when needed.
+*/
+#new-entry-form {
+  display: none;
+}
+#entry-detail {
+  display: none;
+}
+#entry-detail.active, #new-entry-form.active {
+  display: block;
 }
