@@ -1,84 +1,75 @@
 const API_BASE = "https://tunga-diary-api.onrender.com/api/fullstack";
 
-async function login(email, password) {
-  const res = await fetch(`${API_BASE}/auth/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
-  });
-  if (!res.ok) throw new Error("Login failed");
+async function handleResponse(res) {
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.message || 'Request failed');
+  }
   return res.json();
 }
 
-async function getEntries(token) {
-  const res = await fetch(`${API_BASE}/diary`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  if (!res.ok) throw new Error("Failed to fetch entries");
-  return res.json();
-}
+export default {
+  async login(email, password) {
+    const res = await fetch(`${API_BASE}/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    return handleResponse(res);
+  },
 
-async function getEntry(token, id) {
-  const res = await fetch(`${API_BASE}/diary/${id}`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  if (!res.ok) throw new Error("Failed to fetch entry");
-  return res.json();
-}
+  async signup(email, password) {
+    const res = await fetch(`${API_BASE}/auth/signup`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    return handleResponse(res);
+  },
 
-async function createEntry(token, title, content) {
-  const res = await fetch(`${API_BASE}/diary`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ title, content }),
-  });
-  if (!res.ok) throw new Error("Failed to create entry");
-  return res.json();
-}
+  async getEntries(token) {
+    const res = await fetch(`${API_BASE}/diary`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return handleResponse(res);
+  },
 
-async function updateEntry(token, id, title, content) {
-  const res = await fetch(`${API_BASE}/diary/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ title, content }),
-  });
-  if (!res.ok) throw new Error("Failed to update entry");
-  return res.json();
-}
+  async getEntry(token, id) {
+    const res = await fetch(`${API_BASE}/diary/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return handleResponse(res);
+  },
 
-async function deleteEntry(token, id) {
-  const res = await fetch(`${API_BASE}/diary/${id}`, {
-    method: "DELETE",
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  if (!res.ok) throw new Error("Failed to delete entry");
-  return res.json();
-}
+  async createEntry(token, title, content) {
+    const res = await fetch(`${API_BASE}/diary`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ title, content }),
+    });
+    return handleResponse(res);
+  },
 
-async function signup(email, password) {
-  const res = await fetch(`${API_BASE}/auth/signup`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
-  });
-  if (!res.ok) throw new Error("Signup failed");
-  return res.json();
-}
+  async updateEntry(token, id, title, content) {
+    const res = await fetch(`${API_BASE}/diary/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ title, content }),
+    });
+    return handleResponse(res);
+  },
 
-// Export for use in login.js
-window.api = {
-  login,
-  signup,
-  getEntries,
-  getEntry,
-  createEntry,
-  updateEntry,
-  deleteEntry,
+  async deleteEntry(token, id) {
+    const res = await fetch(`${API_BASE}/diary/${id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return handleResponse(res);
+  }
 };
-
