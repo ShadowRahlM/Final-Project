@@ -1,43 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta and title for SEO and responsiveness -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edwin's Chronicals</title>
-    <!-- Stylesheets for reset, landing, general, and icons -->
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/landing.css" />
-    <link rel="stylesheet" href="/styles/general.css" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/landing.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
   </head>
-  <body class="army-gradient-repeating-camo">
+  <body>
     <main>
-      <!-- Header: App title and intro -->
       <header class="header-container">
         <div>
           <h1 class="heading-font">Edwin's Chronicals</h1>
         </div>
         <div>
           <p>
-            <b
-              >Interact with your inner self with inspiration from yours truly,
-              Edwin AKA <i>Thee Shadow Monarch</i>.</b
-            >
+            <b>Interact with your inner self with inspiration from yours truly,
+            Edwin AKA <i>Thee Shadow Monarch</i>.</b>
             Dive in and record your unique personality traits and daily
             thoughts.<br />
             No worries—we all have a story to tell!
           </p>
         </div>
         <div>
-          <!-- Button to go to login page -->
-          <button
-            class="secondary-btn"
-            onclick="window.location.href='pages/login.html'"
-          >
+          <button class="secondary-btn" id="get-started-btn">
             Get Started
           </button>
         </div>
@@ -45,7 +36,6 @@
 
       <h2 class="intro">Why Choose Edwin's Chronicals</h2>
       <section class="flex-container">
-      
         <div class="flex-item lifted-effect">
           <i class="fa-solid fa-pen-nib fa-2x title-color"></i>
           <h1 class="title-color">Inspired Writing</h1>
@@ -77,14 +67,10 @@
         </div>
       </section>
     </main>
-    <!-- <footer class="footer-container">
-      <p>
-        &copy; 2025 Mugabi Edwin's Chronicals. All rights reserved.
-        <br />
-        <a href="#" class="footer-link"
-          >Privacy Policy</a
-        > | <a href="#" class="footer-link">Terms of Service</a>
-      </p>
-    </footer> -->
+    <script>
+      document.getElementById('get-started-btn').addEventListener('click', () => {
+        window.location.href = 'pages/login.html';
+      });
+    </script>
   </body>
 </html>

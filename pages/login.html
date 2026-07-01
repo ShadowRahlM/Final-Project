@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login | Edwin's Chronicals</title>
-  <link rel="stylesheet" href="/styles/login.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="../styles/reset.css" />
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
-  <a href="/index.html" class="home-icon" title="Return Home">
+  <a href="../index.html" class="home-icon" title="Return Home">
     <i class="fa fa-home"></i>
   </a>
   <div class="login-container">
     <h2><i class="fa-solid fa-user"></i> Login to Edwin's Chronicals</h2>
     <form id="login-form">
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Password" required>
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
       <button type="submit">Login</button>
       <div id="login-error" class="error"></div>
     </form>
-    <p>Don't have an account? <a href="/pages/signup.html">Sign Up</a></p>
+    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
   </div>
-  <script type="module" src="/services/login.js"></script>
+  <script type="module" src="../services/login.js"></script>
 </body>
 </html>

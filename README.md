@@ -13,10 +13,15 @@ Connects to a backend API for user authentication and diary management.
 ## Folder Structure
 
 ```
-index.html
-pages/        # App pages (HTML/JS)
-services/     # API calls and utilities
-styles/       # CSS files
+index.html          # Landing page
+pages/              # App pages (HTML)
+services/           # API calls and utilities (JS modules)
+styles/
+├── reset.css       # CSS reset
+├── base.css        # Shared styles (gradient, buttons, forms)
+├── landing.css     # Landing page styles
+├── login.css       # Login/signup form styles
+└── diary.css       # Diary page styles
 ```
 
 ## Getting Started
@@ -37,6 +42,7 @@ styles/       # CSS files
 
 - **Endpoints:**  
   - `POST /auth/login` — User login
+  - `POST /auth/signup` — User registration
   - `GET /diary` — Fetch all entries
   - `GET /diary/:id` — Get single entry
   - `POST /diary` — Create new entry
@@ -45,7 +51,8 @@ styles/       # CSS files
 
 ## Customization
 
-- Edit styles in `styles/landing.css`
+- Edit landing styles in `styles/landing.css`
+- Edit shared styles in `styles/base.css`
 - Add new pages in the `pages/` folder
 - Update API logic in `services/`
 

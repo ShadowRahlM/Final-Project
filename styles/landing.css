@@ -1,22 +1,3 @@
-/* 
-  Applies a consistent linear gradient background to the entire page.
-  Ensures all pages have the same visual style.
-*/
-body {
-  min-height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(
-    to left,
-    rgb(73, 72, 72) 20%,
-    green 50%,
-    teal 100%
-  );
-}
-
-/* 
-  Styles the main header section, removes any background to let the gradient show.
-*/
 header {
   width: 100%;
   height: 12.5rem;
@@ -24,9 +5,6 @@ header {
   margin: 0;
 }
 
-/* 
-  Container for header content, centers and spaces elements vertically.
-*/
 .header-container {
   display: flex;
   align-items: center;
@@ -38,35 +16,17 @@ header {
   overflow: auto;
 }
 
-/* 
-  Large, bold font for main headings.
-*/
 .heading-font {
   font-weight: 600;
   font-size: 2em;
 }
 
-/* 
-  Styles all buttons for a modern look.
-*/
-button {
-  background-color: rgb(0, 132, 255);
-  border: 2px solid rgb(94, 91, 91);
-  border-radius: 0.8em;
-  margin: 1em;
-  padding: 0.9rem;
+.intro {
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(224, 216, 200);
 }
 
-/* 
-  Legacy gradient class, kept for backward compatibility.
-*/
-.army-gradient-repeating-camo {
-  background-image: linear-gradient(to right, #7e9eb4, #d89925);
-}
-
-/* 
-  Flex container for feature cards, spaces them evenly.
-*/
 .flex-container {
   display: flex;
   justify-content: center;
@@ -74,18 +34,6 @@ button {
   gap: 2em;
 }
 
-/* 
-  Styles the intro text under the header.
-*/
-.intro {
-  text-align: center;
-  font-size: 1.5rem;
-  color: rgb(224, 216, 200);
-}
-
-/* 
-  Styles for each feature card.
-*/
 .flex-item {
   display: flex;
   flex-direction: column;
@@ -97,9 +45,6 @@ button {
   max-width: 25%;
 }
 
-/* 
-  Adds a shadow and hover effect to feature cards for depth.
-*/
 .lifted-effect {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s, transform 0.3s;
@@ -107,4 +52,35 @@ button {
 .lifted-effect:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px);
+}
+
+.title-color {
+  color: #15607a;
+  text-align: end;
+  font: caption;
+  padding: 0.6rem;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: #15607a;
+  border: 2px solid #15607a;
+  border-radius: 0.5em;
+  padding: 0.7em 1.5em;
+  font-size: 1em;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.secondary-btn:hover,
+.secondary-btn:focus {
+  background-color: #15607a;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(21, 96, 122, 0.15);
+}
+.secondary-btn:active {
+  background-color: #63afe9;
+  color: #fff;
+  transform: translateY(0);
+  box-shadow: none;
 }
